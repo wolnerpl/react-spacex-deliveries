@@ -41,21 +41,6 @@ function App() {
               <MenuItem value="30">30</MenuItem>
               <MenuItem value="50">50</MenuItem>
           </Select>
-          <DataGrid
-              columns={columns}
-              rows={visibleTodos}
-              initialState={{
-                  pagination: {
-                      paginationModel: {
-                          pageSize: 5,
-                      },
-                  },
-              }}
-              pageSizeOptions={[5]}
-              checkboxSelection
-              disableRowSelectionOnClick
-              getRowId={(row) => row.launch_date_unix}
-          />
           <div>
           {
             visibleTodos.map((todo, i) => <p key={i}>{todo.mission_name}</p>)
