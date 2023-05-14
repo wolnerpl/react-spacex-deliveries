@@ -10,12 +10,12 @@ import 'react-lazy-load-image-component/src/effects/opacity.css';
 import './App.css';
 
 function App() {
-    const [todos, setTodos] = useState([]);
+    const [launches, setLaunches] = useState([]);
 
     useEffect(()=>{
         axios
             .get('https://api.spacexdata.com/v3/launches')
-            .then((res) => setTodos(res.data))
+            .then((res) => setLaunches(res.data))
     });
 
     const columns = [
@@ -87,7 +87,7 @@ function App() {
       <Container maxWidth="xl">
           <DataGrid
               columns={columns}
-              rows={todos}
+              rows={launches}
               initialState={{
                   pagination: {
                       paginationModel: {
